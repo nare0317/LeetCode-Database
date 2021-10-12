@@ -1,0 +1,7 @@
+SELECT A.Id
+	FROM	(SELECT Id, RecordDate, Temperature,
+								LAG(Temperature,1,NULL) OVER(ORDER BY RecordDate) AS PrevTemperature,
+								LAG(RecordDate,1,NULL) OVER(ORDER BY RecordDate) AS Yesterday
+								FROM Weather
+				) AS A
+	WHERE A.Temperature - A.PrevTemperature > 0 AND DATEADD(DD,-1,RecordDate) = Yesterday
