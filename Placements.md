@@ -83,4 +83,6 @@ ORDER BY FRIEND_SALARY
 
 ```
 
+## References
+[HackerRank - SQL>Advanced Join>Placements](https://www.hackerrank.com/challenges/placements/problem?isFullScreen=true)
 
