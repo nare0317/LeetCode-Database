@@ -56,3 +56,31 @@ The name output, when ordered by the salary offered to their friends, will be:
 - Samantha
 - Julia
 - Scarlet
+
+
+## My Answer 
+
+```SQL
+-- MS SQL Server 
+WITH RESULT(ID, NAME, FRIEND_ID, MY_SALARY, FRIEND_SALARY)
+AS
+(
+SELECT A.ID, A.Name, B.Friend_ID, C.Salary AS MY_SALARY, D.Salary AS FRIEND_SALARY
+FROM Students AS A 
+JOIN Friends AS B ON A.ID = B.ID
+JOIN Packages AS C ON A.ID = C.ID
+JOIN Packages AS D ON B.Friend_ID = D.ID    
+)
+SELECT NAME 
+FROM RESULT
+WHERE MY_SALARY < FRIEND_SALARY
+ORDER BY FRIEND_SALARY
+```
+
+## Other Solutions 
+
+```SQL
+
+```
+
+
