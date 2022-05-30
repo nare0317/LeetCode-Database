@@ -80,7 +80,26 @@ ORDER BY FRIEND_SALARY
 ## Other Solutions 
 
 ```SQL
+-- Oracle 
+SELECT name
+FROM
+(
+SELECT DISTINCT s.name , fo.salary
+FROM Students s, Packages so, Friends f, Packages fo
+WHERE s.id = so.id
+AND f.friend_id = fo.id
+AND s.id = f.id
+AND fo.salary > so.salary
+ORDER BY fo.salary);
+```
 
+```SQL
+-- Mysql
+select s.name from students s
+inner join friends f on f.id = s.id
+inner join packages p on p.id = s.id
+where p.salary < (select pp.salary from packages pp where pp.id = f.friend_id)
+order by (select pp.salary from packages pp where pp.id = f.friend_id) asc;
 ```
 
 ## References
