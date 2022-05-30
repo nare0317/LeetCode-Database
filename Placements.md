@@ -103,5 +103,7 @@ order by (select pp.salary from packages pp where pp.id = f.friend_id) asc;
 ```
 
 ## References
-[HackerRank - SQL>Advanced Join>Placements](https://www.hackerrank.com/challenges/placements/problem?isFullScreen=true)
+1. Problem: [HackerRank - SQL>Advanced Join>Placements](https://www.hackerrank.com/challenges/placements/problem?isFullScreen=true)
+2. CTE Expression: [MS SQL - CTE Expression](https://docs.microsoft.com/en-us/sql/t-sql/queries/with-common-table-expression-transact-sql?view=sql-server-ver16)
+
 
